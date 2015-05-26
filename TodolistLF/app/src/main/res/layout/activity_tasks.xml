@@ -1,0 +1,93 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="es.antoniolf.todolistlf.TasksActivity"
+    android:background="@drawable/gradient">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentStart="false"
+        android:layout_margin="0dp"
+        android:background="@color/blue"
+        android:id="@+id/linearLayout"
+        android:weightSum="1">
+
+        <ImageButton
+            android:layout_width="52dp"
+            android:layout_height="match_parent"
+            android:id="@+id/ib_home"
+            android:src="@drawable/b_home"
+            android:background="@null"
+            android:onClick="goHome" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/tittle"
+            android:id="@+id/txt_title"
+            android:gravity="center_vertical|center_horizontal"
+            android:textSize="20dp"
+            android:textColor="@color/clear"
+            android:elegantTextHeight="true"
+            android:layout_weight="1.00" />
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:id="@+id/ib_editP"
+            android:background="@null"
+            android:src="@drawable/b_edit"
+            android:onClick="goEditProject" />
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:id="@+id/ib_deleteP"
+            android:background="@null"
+            android:src="@drawable/b_delete"
+            android:onClick="deleteProject" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/tasks"
+        android:id="@+id/txt_tasks"
+        android:layout_below="@+id/linearLayout"
+        android:layout_centerHorizontal="true"
+        android:textSize="27dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/blue"
+        android:gravity="center_vertical|center_horizontal"
+        android:textStyle="bold" />
+
+    <ListView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lv_tasks"
+        android:divider="@color/clear"
+        android:dividerHeight="2px"
+        android:layout_below="@+id/txt_tasks"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/button" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/newtask"
+        android:id="@+id/button"
+        android:background="@drawable/gradient"
+        android:onClick="goNewTask"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>

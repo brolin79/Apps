@@ -1,0 +1,56 @@
+<resources>
+    <!-- MAIN -->
+    <string name="app_name">Todolist LF</string>
+    <string name="tittle">TODOLIST LF</string>
+    <string name="projects">Proyectos</string>
+    <string name="tasks">Tareas</string>
+    <string name="banner_ad_unit_id">ca-app-pub-2967694527472150/9479092021</string>
+    <!-- PROJECTS -->
+    <string name="newproject">Nuevo Proyecto</string>
+    <string name="projectname">Nombre Proyecto</string>
+    <string name="deadline">Fecha Límite</string>
+    <string name="priority">Prioridad</string>
+    <string name="priority_high">Alta</string>
+    <string name="priority_normal">Normal</string>
+    <string name="priority_low">Baja</string>
+    <string name="send">Enviar</string>
+    <string name="setdate">Fijar Fecha</string>
+    <string name="deadlinedate">Ninguna</string>
+    <string name="projectsaved">Proyecto Guardado</string>
+    <!-- TASKS -->
+    <string name="newtask">Nueva Tarea</string>
+    <string name="taskname">Nombre Tarea</string>
+    <string name="tasknote">Nota</string>
+    <string name="percentage">Porcentaje</string>
+    <string name="tasksaved">Tarea Guardada</string>
+    <!-- DIALOG -->
+    <string name="delete_p_title">Eliminar Proyecto</string>
+    <string name="delete_p_msg">¿Estas seguro de querer eliminar este proyecto y todas sus tareas?</string>
+    <string name="delete_p_ok">Proyecto Eliminado</string>
+    <string name="delete_t_title">Eliminar Tarea</string>
+    <string name="delete_t_msg">¿Estas seguro de querer eliminar esta tarea?</string>
+    <string name="delete_t_ok">Tarea Eliminada</string>
+    <!-- SETTINGS -->
+    <string name="settings">Opciones</string>
+    <string name="ordertask">Ordenar Tareas por:</string>
+    <string name="orderproject">Ordenar Proyectos por:</string>
+    <string name="s_latest">Recientes</string>
+    <string name="s_priority">Prioridad</string>
+    <string name="s_name">Nombre</string>
+    <string name="s_percentage">Porcentaje</string>
+    <string name="s_saved">Cambios Guardados</string>
+    <string name="b_save">Guardado</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_world">Hola Mundo!</string>
+    <string name="title_activity_puta_mierda">Pues eso</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_newproject">NewprojectActivity</string>
+    <string name="title_activity_new_task">newTaskActivity</string>
+    <string name="title_activity_tasks">TasksActivity</string>
+    <string name="action_settings">Opciones</string>
+    <string name="title_activity_edit_task">editTaskActivity</string>
+    <string name="title_activity_edit_project">editProjectActivity</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+</resources>

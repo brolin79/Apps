@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="Content-type" name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
+    <title>Sporting Xixon</title>	
+		
+        
+        <link rel="stylesheet" href="css/init.css" />
+        <link rel="stylesheet" href="css/grid.css" />
+	    <link rel="stylesheet" href="css/sporting.css" />
+		
+		<script src="js/jquery.js" type="text/javascript"></script>
+        <script src="js/sporting.js" type="text/javascript"></script>
+	   	<script src="js/apis.js" type="text/javascript"></script>
+	  	<script src="js/cordova.js" type="text/javascript"></script>
+	    <script src="js/xdomainajax.js" type="text/javascript"></script>
+        
+</head> 
+<body>
+	
+<!--========================================================================== HEADER =====================================================================================-->  
+    
+    <div class="main">
+		<div class="logo"><h1>Sporting Xixon</h1></div>
+		<div class="menu-trigger"><a href="#"><img src="img/menu.png"/></a></div>
+		<div class="escudo"><img src="img/escudom.png" /></a></div>
+	</div>             
+            
+<div class="wrapper">
+
+<!--========================================================================== MENU =====================================================================================-->  
+
+      <div class="grids" id="api-menu">	
+		<div class="grid-16 grid">
+        
+		<nav id="menu">
+  			<h3>Actualidad</h3>
+            <ul>
+            	<li><a href="#" id="click-noticias" onClick="location.reload();"><img src="img/icon/actualidad.png"/> Noticias</a></li>
+            	<li><a href="#" id="click-calendario"><img src="img/icon/calendario.png"/> Calendario</a></li>
+            	<li><a href="#" id="click-clasificacion"><img src="img/icon/clasificacion.png"/> Clasificacion</a></li>
+            	<li><a href="#" id="click-matchlive"><img src="img/icon/vivo.png"/> Partido en Vivo (Beta)</a></li>
+                <li><a href="#" id="click-links"><img src="img/icon/link.png"/> Links</a></li>
+            </ul>            
+			<h3>Temporada 14/15</h3>
+            <ul>
+				<li><a href="#" id="click-plantilla"><img src="img/icon/delantero.png"/> Plantilla</a></li>
+              	<li><a href="#" id="click-staff"><img src="img/icon/staff.png"/> Staff</a></li>
+              	<li><a href="#" id="click-filial"><img src="img/icon/filial.png"/> Filial</a></li>
+              	<li><a href="#" id="click-equip"><img src="img/icon/equip.png"/> Equipaciones</a></li>
+			</ul>           
+			<h3>El Club</h3>
+            <ul>
+		    	<li><a href="#" id="click-molinon"><img src="img/icon/estadio.png"/> El Molinon</a></li>
+		    	<li><a href="#" id="click-mareo"><img src="img/icon/club.png"/> Mareo</a></li>
+		    	<li><a href="#" id="click-himno"><img src="img/icon/himno.png"/> Himno</a></li>
+		    	<li><a href="#" id="click-escudos"><img src="img/icon/escudos.png"/> Escudos</a></li>
+			</ul>
+            
+            <h3>Historia</h3>
+            <ul>
+		    	<li><a href="#" id="click-historia"><img src="img/icon/hist.png"/> Cronológica</a></li>
+		    	<li><a href="#" id="click-leyendas"><img src="img/icon/lg.png"/> Leyendas</a></li>
+		    	<li><a href="#" id="click-estadisticas"><img src="img/icon/stats.png"/> Estadisticas</a></li>
+			</ul> 
+		</nav>    
+            
+		</div>
+	  </div><!--end of intro-->   
+
+<!--========================================================================== INTRO =====================================================================================-->  
+
+      <div class="grids" id="api-intro">	
+		<div class="grid-16 grid">
+        
+        <div class="cargando" style="display:none;"><img src="img/loading.gif"/></div>
+      
+        <table id="rival" class="datos">
+          <th colspan="3"><h4>Proximo Partido</h4></th>
+          <tr>
+            <td style="text-align:center;" id="loc"></td>
+            <td style="text-align:center; vertical-align:middle;" id="inf"></td>
+            <td style="text-align:center;" id="vis"></td>
+          </tr>
+        </table>
+           
+        <table id="noticias" class="datos">
+          <th colspan="2"><h4>Noticias</h4></th>
+        </table>
+            
+		</div>
+	  </div><!--end of intro-->   
+      
+<!--========================================================================== CALENDARIO =====================================================================================-->  
+      
+      <div class="grids" id="api-calendario">	
+		<div class="grid-16 grid">
+        
+        <div align="center"><a href="#" id="calen_ida" class="button">Ida</a>&nbsp;&nbsp;<a href="#" id="calen_vue" class="button">Vuelta</a></div>
+              
+        <div class="cargando" style="display:none;"><img src="img/loading.gif"/></div>
+      
+        <table id="calendario" class="datos">
+        </table>
+        
+		</div>
+	  </div><!--end of calendario-->   
+        
+<!--========================================================================== CLASIFICACION =====================================================================================-->  
+      
+      <div class="grids" id="api-clasificacion">	
+		<div class="grid-16 grid">
+                      
+        <div class="cargando" style="display:none;"><img src="img/loading.gif"/></div>
+      
+        <table id="clasificacion" class="datos">
+        </table>
+        
+		</div>
+	  </div><!--end of clasificacion-->        
+      
+<!--========================================================================== LINKS =====================================================================================-->  
+      
+      <div class="grids" id="api-links">	
+		<div class="grid-16 grid">
+      	
+        <table id="links" class="datos">
+        <th colspan="2">Links</th>
+        <tr><td>Real Sporting (Web oficial)</td><td style="text-align:right;"><a class="button" href="http://www.realsporting.com" target="_blank">Visitar</a></td></tr>
+        <tr><td>Boutique Sporting (Oficial)</td><td style="text-align:right;"><a class="button" href="http://www.realsporting.com/wrsg/index.php?option=com_wrapper&view=wrapper&Itemid=226" target="_blank">Visitar</a></td></tr>
+        <tr><td>Foro Portalsportinguista</td><td style="text-align:right;"><a class="button" href="http://foro.portalsportinguista.com" target="_blank">Visitar</a></td></tr>
+        <tr><td>Puxa Molinon</td><td style="text-align:right;"><a class="button"  href="http://www.puxamolinon.com" target="_blank">Visitar</a></td></tr>
+        </table>
+        
+		</div>
+	  </div><!--end of links-->  
+      
+<!--========================================================================== PORTEROS =====================================================================================-->  
+      
+      <div class="grids" id="api-porteros">	
+		<div class="grid-16 grid">
+        
+          <div align="center">
+          	<a href="#" class="button btn_porteros"><img src="img/icon/portero.png"/> Porteros</a>&nbsp;&nbsp;
+          	<a href="#" class="button btn_defensas"><img src="img/icon/defensa.png"/> Defensas</a>&nbsp;&nbsp;
+            <div style="padding:5px 0;"></div>
+            <a href="#" class="button btn_medios"><img src="img/icon/medio.png"/> Medios</a>&nbsp;&nbsp;
+            <a href="#" class="button btn_delanteros"><img src="img/icon/delantero.png"/> Delanteros</a>&nbsp;&nbsp;
+          </div>
+              
+        <table id="porteros" class="datos">
+          <th colspan="3">Porteros</th>
+          <tr>
+            <td style="text-align:center; vertical-align:middle"><img src="img/jug/01.jpg"/></td>
+            <td><span class="cabecera">1 - Ivan Cuéllar</span><br/>27/05/1984 Mérida<br/>82 kg - 1,87 m<br/>Eibar</td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/esp.jpg"/></td>
+          </tr>
+          <tr>
+            <td style="text-align:center; vertical-align:middle"><img src="img/jug/13.jpg"/></td>
+            <td><span class="cabecera">13 - Alberto García</span><br/>09/02/1985 Barcelona<br/>76 kg - 1,82 m<br/>Cordoba</td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/esp.jpg"/></td>
+          </tr>
+          <tr>
+            <td style="text-align:center; vertical-align:middle"><img src="img/jug/26.jpg"/></td>
+            <td><span class="cabecera">26 - Dennis Díaz</span><br/>08/08/1992 Mieres<br/>71 kg - 1,82 m<br/>Sporting B</td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/ast.jpg"/></td>
+          </tr>
+        </table>
+            
+		</div>
+	  </div><!--end of porteros-->
+      
+<!--========================================================================== DEFENSAS =====================================================================================-->  
+      
+      <div class="grids" id="api-defensas">	
+		<div class="grid-16 grid">
+             
+          <div align="center">
+          	<a href="#" class="button btn_porteros"><img src="img/icon/portero.png"/> Porteros</a>&nbsp;&nbsp;
+          	<a href="#" class="button btn_defensas"><img src="img/icon/defensa.png"/> Defensas</a>&nbsp;&nbsp;
+            <div style="padding:5px 0;"></div>
+            <a href="#" class="button btn_medios"><img src="img/icon/medio.png"/> Medios</a>&nbsp;&nbsp;
+            <a href="#" class="button btn_delanteros"><img src="img/icon/delantero.png"/> Delanteros</a>&nbsp;&nbsp;
+          </div>
+        
+        <table id="defensas" class="datos">
+          <th colspan="3">Defensas</th>
+          <tr>
+            <td style="text-align:center; vertical-align:middle"><img src="img/jug/02.jpg"/></td>
+            <td><span class="cabecera">2 - Luis Hernández</span><br/>14/04/1989 Madrid<br/>74 kg - 1,82 m<br/>Sporting B</td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/esp.jpg"/></td>
+          </tr>
+          <tr>
+            <td style="text-align:center; vertical-align:middle"><img src="img/jug/03.jpg"/></td>
+            <td><span class="cabecera">3 - Alex Menéndez</span><br/>15/07/1991 Luanco<br/>67 kg - 1,81 m<br/>Sporting B</td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/ast.jpg"/></td>
+          </tr>
+          <tr>
+            <td style="text-align:center; vertical-align:middle"><img src="img/jug/05.jpg"/></td>
+            <td><span class="cabecera">5 - Bernardo Espinosa</span><br/>11/07/1989 Cali<br/>85 kg - 1,92 m<br/>Sevilla</td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/ext.jpg"/></td>
+          </tr> 
+          <tr>
+            <td style="text-align:center; vertical-align:middle"><img src="img/jug/11.jpg"/></td>
+            <td><span class="cabecera">11 - Alberto Lora</span><br/>25/03/1987 Mostoles<br/>67 kg - 1,68 m<br/>Sporting B</td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/esp.jpg"/></td>
+          </tr>
+          <tr>
+            <td style="text-align:center; vertical-align:middle"><img src="img/jug/14.jpg"/></td>
+            <td><span class="cabecera">14 - Ivan Hernández</span><br/>27/02/1980 Madrid<br/>83 kg - 1,88 m<br/>Valladolid</td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/esp.jpg"/></td>
+          </tr>
+            <td style="text-align:center; vertical-align:middle"><img src="img/jug/20.jpg"/></td>
+            <td><span class="cabecera">20 - Julio Rodríguez</span><br/>07/12/1995 Mieres<br/>86 kg - 1,94 m<br/>Sporting B</td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/ast.jpg"/></td>
+          </tr>
+          <tr>
+            <td style="text-align:center; vertical-align:middle"><img src="img/jug/28.jpg"/></td>
+            <td><span class="cabecera">28 - Jorge Mere</span><br/>17/04/1997 Oviedo<br/>68 kg - 1,79 m<br/>Sporting B</td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/ast.jpg"/></td>
+          </tr>
+        </table>
+            
+		</div>
+	  </div><!--end of defensas-->
+      
+<!--========================================================================== MEDIOS =====================================================================================-->  
+      
+      <div class="grids" id="api-medios">	
+		<div class="grid-16 grid">
+             
+          <div align="center">
+          	<a href="#" class="button btn_porteros"><img src="img/icon/portero.png"/> Porteros</a>&nbsp;&nbsp;
+          	<a href="#" class="button btn_defensas"><img src="img/icon/defensa.png"/> Defensas</a>&nbsp;&nbsp;
+            <div style="padding:5px 0;"></div>
+            <a href="#" class="button btn_medios"><img src="img/icon/medio.png"/> Medios</a>&nbsp;&nbsp;
+            <a href="#" class="button btn_delanteros"><img src="img/icon/delantero.png"/> Delanteros</a>&nbsp;&nbsp;
+          </div>
+       
+        <table id="medios" class="datos">
+          <th colspan="3">Medios</th>
+          <tr>
+            <td style="text-align:center; vertical-align:middle"><img src="img/jug/04.jpg"/></td>
+            <td><span class="cabecera">4 - Mandi Sosa</span><br/>01/03/1989 Gran Canaria<br/>76 kg - 1,82 m<br/>Castilla</td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/esp.jpg"/></td>
+          </tr>
+          <tr>
+            <td style="text-align:center; vertical-align:middle"><img src="img/jug/06.jpg"/></td>
+            <td><span class="cabecera">6 - Sergio Alvarez</span><br/>23/01/1992 Aviles<br/>65 kg - 1,80 m<br/>Sporting B</td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/ast.jpg"/></td>
+          </tr>
+          <tr>
+            <td style="text-align:center; vertical-align:middle"><img src="img/jug/07.jpg"/></td>
+            <td><span class="cabecera">7 - Juan Muñiz</span><br/>14/03/1992 Gijón<br/>72 kg - 1,75 m<br/>Almeria</td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/ast.jpg"/></td>
+          </tr>
+          <tr>
+            <td style="text-align:center; vertical-align:middle"><img src="img/jug/08.jpg"/></td>
+            <td><span class="cabecera">8 - Alex Barrera</span><br/>12/05/1991 Oviedo<br/>78 kg - 1,9 m<br/>Sporting B</td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/ast.jpg"/></td>
+          </tr>
+          <tr>
+            <td style="text-align:center; vertical-align:middle"><img src="img/jug/10.jpg"/></td>
+            <td><span class="cabecera">10 - Nacho Cases</span><br/>22/12/1987 Gijón<br/>64 kg - 1,74 m<br/>Sporting B</td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/ast.jpg"/></td>
+          </tr>
+          <tr>
+            <td style="text-align:center; vertical-align:middle"><img src="img/jug/18.jpg"/></td>
+            <td><span class="cabecera">18 - Isma López</span><br/>29/01/1990 Pamplona<br/>73 kg - 1,80 m<br/>Athletic</td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/esp.jpg"/></td>
+          </tr>
+          <tr>
+            <td style="text-align:center; vertical-align:middle"><img src="img/jug/29.jpg"/></td>
+            <td><span class="cabecera">29 - Rachid Atmane</span><br/>04/02/1993 Paris<br/>76 kg - 1,90 m <br/>Lens</td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/ext.jpg"/></td>
+          </tr>
+          <tr>
+            <td style="text-align:center; vertical-align:middle"><img src="img/jug/30.jpg"/></td>
+            <td><span class="cabecera">23 - Pablo Perez</span><br/>02/08/1993 Gijón<br/>71 kg - 1,87 m<br/>Sporting B</td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/ast.jpg"/></td>
+          </tr>
+          <tr>
+            <td style="text-align:center; vertical-align:middle"><img src="img/jug/33.jpg"/></td>
+            <td><span class="cabecera">33 - Dani Ndi</span><br/>18/08/1995 Camerun<br/>76 kg - 1,78 m <br/>Sporting B</td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/ext.jpg"/></td>
+          </tr>
+        </table>
+            
+		</div>
+	  </div><!--end of medios-->
+
+<!--========================================================================== DELANTEROS =====================================================================================-->  
+      
+      <div class="grids" id="api-delanteros">	
+		<div class="grid-16 grid">
+             
+          <div align="center">
+          	<a href="#" class="button btn_porteros"><img src="img/icon/portero.png"/> Porteros</a>&nbsp;&nbsp;
+          	<a href="#" class="button btn_defensas"><img src="img/icon/defensa.png"/> Defensas</a>&nbsp;&nbsp;
+            <div style="padding:5px 0;"></div>
+            <a href="#" class="button btn_medios"><img src="img/icon/medio.png"/> Medios</a>&nbsp;&nbsp;
+            <a href="#" class="button btn_delanteros"><img src="img/icon/delantero.png"/> Delanteros</a>&nbsp;&nbsp;
+          </div>
+       
+        <table id="delanteros" class="datos">
+          <th colspan="3">Delanteros</th>
+          <tr>
+            <td style="text-align:center; vertical-align:middle"><img src="img/jug/09.jpg"/></td>
+            <td><span class="cabecera">9 - Miguel Guerrero</span><br/>12/07/1990 Toledo<br/>79 kg - 1,8 m<br/>Sporting B</td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/esp.jpg"/></td>
+          </tr>
+          <tr>
+            <td style="text-align:center; vertical-align:middle"><img src="img/jug/15.jpg"/></td>
+            <td><span class="cabecera">15 - Alex Serrano</span><br/>06/02/1995 Barcelona<br/>78 kg - 1,84 m<br/>Sporting B</td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/esp.jpg"/></td>
+          </tr>
+          <tr>
+            <td style="text-align:center; vertical-align:middle"><img src="img/jug/17.jpg"/></td>
+            <td><span class="cabecera">17 - Santiago Jara</span><br/>02/02/1991 Almansa<br/>69 kg - 1,78 m<br/>Sporting B</td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/esp.jpg"/></td>
+          </tr>
+          <tr>
+            <td style="text-align:center; vertical-align:middle"><img src="img/jug/19.jpg"/></td>
+            <td><span class="cabecera">19 - Carlos Carmona</span><br/>05/07/1987 P. Mallorca<br/>73 kg - 1,77 m<br/>Barcelona B</td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/esp.jpg"/></td>
+          </tr>
+          <tr>
+            <td style="text-align:center; vertical-align:middle"><img src="img/jug/21.jpg"/></td>
+            <td><span class="cabecera">21 - Hugo Fraile</span><br/>16/03/1987 Huelva<br/>67 kg - 1,70 m<br/>Getafe</td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/esp.jpg"/></td>
+          </tr>
+          <tr>
+            <td style="text-align:center; vertical-align:middle"><img src="img/jug/23.jpg"/></td>
+            <td><span class="cabecera">23 - Jony Rodríguez</span><br/>09/07/1991 C. Narcea<br/>75 kg - 1,79 m<br/>Sporting B</td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/ast.jpg"/></td>
+          </tr>
+          <tr>
+            <td style="text-align:center; vertical-align:middle"><img src="img/jug/32.jpg"/></td>
+            <td><span class="cabecera">32 - Álvaro Bustos</span><br/>26/06/1995 Gijón<br/>70 kg - 1,73 m<br/>Sporting B</td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/ast.jpg"/></td>
+          </tr>
+        </table>
+            
+		</div>
+	  </div><!--end of delanteros-->
+
+<!--========================================================================== STAFF =====================================================================================-->  
+      
+      <div class="grids" id="api-staff">	
+		<div class="grid-16 grid">
+             
+        <table id="staff" class="datos">
+          <th colspan="2">Staff</th>
+          <tr>
+            <td style="text-align:center; vertical-align:middle"><img src="img/jug/abelardo.jpg"/></td>
+            <td><span class="cabecera">Entrenador</span><br/>Abelardo</td>
+          </tr>
+          <tr>
+            <td style="text-align:center; vertical-align:middle"><img src="img/jug/tejada.jpg"/></td>
+            <td><span class="cabecera">2º Entrenador</span><br/>Iñaki Tejada</td>
+          </tr>
+          <tr>
+            <td style="text-align:center; vertical-align:middle"><img src="img/jug/tomas.jpg"/></td>
+            <td><span class="cabecera">Entrenador 2º Equipo</span><br/>Tomas Hervas</td>
+          </tr>
+          <tr>
+            <td style="text-align:center; vertical-align:middle"><img src="img/jug/quini.jpg"/></td>
+            <td><span class="cabecera">Delegado</span><br/>Quini</td>
+          </tr>
+          <tr>
+            <td style="text-align:center; vertical-align:middle"><img src="img/jug/isidro.jpg"/></td>
+            <td><span class="cabecera">Entrenador de Porteros</span><br/>Isidro Fernández</td>
+          </tr>
+          <tr>
+            <td style="text-align:center; vertical-align:middle"><img src="img/jug/gerardo.jpg"/></td>
+            <td><span class="cabecera">Preparador Físico</span><br/>Gerardo Ruiz</td>
+          </tr>
+          <tr><td></td><td></td></tr>
+          <tr>
+            <td style="text-align:center; vertical-align:middle"><img src="img/jug/veiga.jpg"/>
+            <td><span class="cabecera">Presidente</span><br/>Antonio Veiga</td>
+          </tr>
+        </table>
+            
+		</div>
+	  </div><!--end of staff-->
+      
+<!--========================================================================== FILIAL =====================================================================================-->  
+      
+      <div class="grids" id="api-filial">	
+		<div class="grid-16 grid">
+             
+        <table id="filial" class="datos">
+          <th colspan="2">Porteros</th>
+          <tr>
+            <td><span class="cabecera">Dennis Díaz</span></td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/ast.jpg"/></td>
+          </tr>
+          <tr>
+            <td><span class="cabecera">Pol Busquets</span></td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/ast.jpg"/></td>
+          </tr>
+          <th colspan="2">Defensas</th>
+          <tr>
+            <td><span class="cabecera">Sergio Menéndez</span></td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/ast.jpg"/></td>
+          </tr>
+          <tr>
+            <td><span class="cabecera">Alberto</span></td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/ast.jpg"/></td>
+          </tr>
+          <tr>
+            <td><span class="cabecera">Alberto Benito</span></td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/esp.jpg"/></td>
+          </tr>
+          <tr>
+            <td><span class="cabecera">Borja Álvarez</span></td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/ast.jpg"/></td>
+          </tr>
+          <tr>
+            <td><span class="cabecera">Carlos Viesca</span></td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/esp.jpg"/></td>
+          </tr>  
+          <tr>
+            <td><span class="cabecera">Jorge Mere</span></td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/ast.jpg"/></td>
+          </tr>  
+          <th colspan="2">Medios</th>       
+		  <tr>
+            <td><span class="cabecera">Pablo Perez</span></td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/ast.jpg"/></td>
+          </tr>  
+		  <tr>
+            <td><span class="cabecera">Dani Ndi</span></td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/ext.jpg"/></td>
+          </tr>  
+		  <tr>
+            <td><span class="cabecera">A.Guitián </span></td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/esp.jpg"/></td>
+          </tr>  
+		  <tr>
+            <td><span class="cabecera">Adama Toure</span></td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/ext.jpg"/></td>
+          </tr>  
+		  <tr>
+            <td><span class="cabecera">Jaime Santos</span></td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/ast.jpg"/></td>
+          </tr> 
+		  <tr>
+            <td><span class="cabecera">Luis Alberto</span></td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/esp.jpg"/></td>
+          </tr>  
+		  <tr>
+            <td><span class="cabecera">Rachid Ait-Atmane</span></td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/ext.jpg"/></td>
+          </tr>  
+		  <th colspan="2">Delanteros</th>  
+		  <tr>
+            <td><span class="cabecera">Carlos Castro</span></td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/ast.jpg"/></td>
+          </tr> 
+		  <tr>
+            <td><span class="cabecera">Alex García</span></td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/ast.jpg"/></td>
+          </tr> 
+		  <tr>
+            <td><span class="cabecera">Juan Mera</span></td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/ast.jpg"/></td>
+          </tr> 
+		  <tr>
+            <td><span class="cabecera">Álvaro Bustos</span></td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/ast.jpg"/></td>
+          </tr> 
+		  <tr>
+            <td><span class="cabecera">Guillermo</span></td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/ast.jpg"/></td>
+          </tr> 
+		  <tr>
+            <td><span class="cabecera">Mendigutxia</span></td>
+            <td style="text-align:center; vertical-align:middle"><img src="img/esp.jpg"/></td>
+          </tr> 
+        </table>
+            
+		</div>
+	  </div><!--end of filial-->
+
+
+      <!--========================================================================== EQUIPACION =====================================================================================-->  
+      
+      <div class="grids" id="api-equip">	
+		<div class="grid-16 grid text-centre">          
+        
+         <h3>Primera Equipación</h3>
+         <img src="img/equip/primera.jpg"/>
+         <br>
+         <h3>Segunda Equipación</h3>
+         <img src="img/equip/segunda.jpg"/>
+         <br>
+         <h3>Tercera Equipación</h3>
+         <img src="img/equip/tercera.jpg"/>
+        
+		</div>
+	  </div><!--end of equipacion-->
+      
+<!--========================================================================== EL MOLINON =====================================================================================-->  
+      
+      <div class="grids" id="api-molinon">	
+		<div class="grid-16 grid">
+             
+  <h2>El Molinón</h2>     
+<p align="center"><IMG SRC="img/club/elmolinon.jpg"></p>            
+<p align="justify">Antes que en el Molinón, el Sporting jugaba sus partidos en 
+  la propia playa de San Lorenzo y en el "prau redondu" hasta la inauguración 
+  de este.</p>
+<p align="justify">El Molinón, tomo su nombre de un viejo molino que existía años 
+  atrás en el terreno donde se construyó el estadio.</p>
+<p align="justify">El 5 de agosto de 1917 se inaugura el estadio con un partido 
+  entre el Sporting A y el B. Contaba con una tribuna, gradas de madera y un cercado 
+  de vallas de tabla. La imagen de abajo (algo borrosa) corresponde a ese 
+  dia.</p>
+<p align="center"><IMG SRC="img/club/inauguracion.jpg"></p>
+<p align="justify">En 1928 sufría la primera reforma importante con motivo del 
+  enfrentamiento internacional España-Italia. Se cambió la tribuna de madera pero 
+  un incendio en 1931 la arruino por completo. En 1942 se construyó la grada "del 
+  piles" y en 1951 se hicieron 2 gradas cubiertas de cabecera.</p>
+<p align="justify">Con motivo del Mundial 82 la capacidad del estadio aumento a 45.000. El Molinón fue sede para Alemania en su primera fase ya que acogió 
+  sus partidos frente a Argelia, Chile y Austria</p>
+<p align="justify">Años mas tarde por motivos de seguridad se rebajó el aforo 
+  a 38.388. En la década de los 90 por la normativa FIFA de tener todo el aforo 
+  con asientos se redujo a los 25.885.</p>
+<p align="center"><IMG SRC="img/club/campo.jpg"></p>
+<p align="justify">En 2012 tuvo lugar su última gran reforma. Debido al mal estado de
+algunas zonas, se remodelo gran parte de las tribunas, especialmente en el fondo 
+norte dotándolo de una nueva imagen que comparte con zonas comerciales con la que se 
+pudo financiar el proyecto. Actualmente el aforo es oficialmente de 30.000 asientos.</p>
+<p align="center"><IMG SRC="img/club/dentro.jpg"></p>
+<p align="justify">Actualmente el Molinón se ha convertido en el estadio decano 
+  del futbol español con un comportamiento ejemplar ya que solo ha sido clausurado 
+  una vez en sus casi 100 años de historia. El Molinón guarda un aspecto 
+  muy similar a los estadios típicos ingleses al igual que muchos de los estadios 
+  del norte de España.</p>
+            
+		</div>
+	  </div><!--end of molinon-->
+
+<!--========================================================================== MAREO =====================================================================================-->  
+      
+      <div class="grids" id="api-mareo">	
+		<div class="grid-16 grid">
+             
+<h2>Escuela de futbol de Mareo</h2>
+<p align="center"><IMG SRC="img/mareo/inauguracion.jpg" ALT="Inauguracion"/></TD></p>
+<p align="justify">Mareo es junto al Molinón el símbolo mas importante del Sportinguismo. 
+  Creada en 1979 tras la venta de los campos de los Fresnos, D. Ángel Viejo Feliu adquiere los terrenos donde se empezó a construir.
+  Esta escuela de futbol no ha dejado de dar sus frutos en forma de grandes jugadores de la talla de 
+  los internacionales Abelardo y Luis Enrique o mas recientemente el campeón del mundo y Europa David Villa</p>
+<table class="varios"><tr>
+  <td style="border-bottom:none;"><IMG SRC="img/mareo/abelardo.jpg" ALT="Abelardo"/></td>
+  <td style="border-bottom:none;"><IMG SRC="img/mareo/luis.jpg" ALT="Luis Enrique"/></td>
+  <td style="border-bottom:none;"><IMG SRC="img/mareo/davidvilla.jpg" ALT="David Villa"/></td>
+</tr></table>
+<p align="justify">Desde su comienzo Mareo ha sido la envidia de otros clubs y 
+  ha provisto al primer equipo con jugadores de una contrastada calidad. Además 
+  del primer equipo el resto de categorías inferiores cobran vital importancia, 
+  así como la formación de futuros jugadores, sin olvidar la labor de ojeadores 
+  en busca de talentos repartidos tanto por Asturias como por otras comunidades.</p>
+<p align="center"><IMG SRC="img/mareo/ahora.jpg" ALT="Ahora"/></TD></p>
+<p align="justify">La Escuela de Fútbol de Mareo está situada a unos 6 km de Gijón, 
+  en un entorno natural privilegiado, y dispone de unas instalaciones únicas en 
+  su género con varios campos de futbol de hierba natural y artificial, campos de arena, 
+  gimnasio y varias cabañas para el alojamiento de los chavales, las cueles llevan los nombres de
+  los jugadores que han sido internacionales con la selección española.</p>
+<table class="varios"><tr>
+  <td style="border-bottom:none;"><IMG SRC="img/mareo/campo.jpg"/></td>
+  <td style="border-bottom:none;"><IMG SRC="img/mareo/cabana.jpg"/></td>
+  <td style="border-bottom:none;"><IMG SRC="img/mareo/vestuarios.jpg"/></td>
+</tr></table>
+            
+		</div>
+	  </div><!--end of mareo-->
+      
+<!--========================================================================== HIMNO =====================================================================================-->  
+      
+      <div class="grids" id="api-himno">	
+		<div class="grid-16 grid">
+             
+        <h2>Himno Oficial</h2> 
+		<br/>		
+        <div align="center"><a href="#" id="playaudio" class="button">Iniciar</a>&nbsp;&nbsp;<a href="#" id="stopaudio" class="button">Parar</a></div>
+        
+        <p class="red text-center">
+        
+         Real Sporting, equipo famoso,<br/>
+         de rancia solera,<br/>
+         brillante historial,<br/>
+         que a Gijón tu le diste gran fama<br/>
+         y en El Molinón no tienes rival.<br/>
+         <br/>
+         De tu cantera surgieron valores,<br/>
+         que nadie ni nunca podrán olvidar,<br/>
+         vencedor por los campos de España,<br/>
+         otra vez volveras a triunfar.<br/>
+         <br/>
+         ¡Aupa Real Sporting!,<br/>
+         equipo legendario,<br/>
+         que tanto has luchado,<br/>
+         para poder triunfar,<br/>
+         revive tus laureles,<br/>
+         y siempre hacia adelante,<br/>
+         tu fe nunca decaiga,<br/>
+         no debes desmayar.<br/>
+         <br/>
+         Sporting a la lucha,<br/>
+         batalla sin cesar.<br/>
+         <br/>
+         ¡Aupa Real Sporting!,<br/>
+         de ti esperamos más.
+        </p>
+      
+		</div>
+	  </div><!--end of himno-->
+      
+<!--========================================================================== ESCUDOS =====================================================================================-->  
+      
+      <div class="grids" id="api-escudos">	
+		<div class="grid-16 grid">          
+        
+         <table id="escudos" class="varios">
+          <th colspan="2">Escudos oficiales</th>
+          <tr><td style="text-align:center;"><img src="img/escudos/01.jpg"/></td><td><h3>1912 - 1919</h3></td></tr>
+          <tr><td style="text-align:center;"><img src="img/escudos/02.jpg"/></td><td><h3>1920 - 1921</h3></td></tr>
+          <tr><td style="text-align:center;"><img src="img/escudos/03.jpg"/></td><td><h3>1922 - 1924</h3></td></tr>
+          <tr><td style="text-align:center;"><img src="img/escudos/04.jpg"/></td><td><h3>1925 - 1930</h3></td></tr>
+          <tr><td style="text-align:center;"><img src="img/escudos/05.jpg"/></td><td><h3>1931 - 1939</h3></td></tr>
+          <tr><td style="text-align:center;"><img src="img/escudos/06.jpg"/></td><td><h3>1940 - 1954</h3></td></tr>
+          <tr><td style="text-align:center;"><img src="img/escudos/07.jpg"/></td><td><h3>1955 - 1969</h3></td></tr>
+          <tr><td style="text-align:center;"><img src="img/escudos/08.jpg"/></td><td><h3>1970 - 1996</h3></td></tr>
+          <tr><td style="text-align:center;"><img src="img/escudos/09.jpg"/></td><td><h3>1997 - Actualidad</h3></td></tr>
+          </tr>
+        </table>
+        
+		</div>
+	  </div><!--end of escudos-->
+ 
+      
+<!--========================================================================== HISTORIA 1 =====================================================================================-->  
+      
+      <div class="grids" id="api-historia1">	
+		<div class="grid-16 grid">
+             
+          <div align="center">
+          	<a href="#" class="button btn_historia1">1905<br>1969</a>&nbsp;&nbsp;
+            <a href="#" class="button btn_historia2">1970<br>1989</a>&nbsp;&nbsp;
+            <a href="#" class="button btn_historia3">1990<br>2014</a>&nbsp;&nbsp;
+          </div>
+         
+          <table id="historia1" class="varios">
+          <th><h4>1905-1969</h4></th>
+          <tr><td><h3>1905</h3><p>Fundación del club</p>
+          <p align="center"><img src="img/historia/1905.jpg"/></p></td></tr>
+          <tr><td><h3>1908</h3><p>El primer partido probado, el rival el club langreano. El resultado fue victoria por 1-2</p></td></tr>
+          <tr><td><h3>1912</h3><p>Titulo de Real por Alfonso XIII</p></td></tr>
+          <tr><td><h3>1917</h3><p>Inauguración del Molinón</p></td></tr>
+          <tr><td><h3>1922</h3><p>Semifinalista de la copa del Rey</p></td></tr>
+          <tr><td><h3>1924</h3><p>Polémica por un arbitraje en un partido de copa, el sporting se niega a jugar y es sancionado</p></td></tr>
+          <tr><td><h3>1928</h3><p>Se crea la liga con el Sporting en segunda. Dirige el equipo el ex-jugador Meana</p>
+          <p align="center"><img src="img/historia/1928.jpg"/></p></td></tr>
+          <tr><td><h3>1939</h3><p>La directiva es sustituida tras la guerra civil. El club pasa a llamarse "Real Gijon"</p></td></tr>
+          <tr><td><h3>1944</h3><p>Primer ascenso a primera. El primer partido fue contra el deportivo con empate a tres. El primer gol fue de Gundemaro</p>
+          <p align="center"><img src="img/historia/1944.jpg"/></p></td></tr>
+          <tr><td><h3>1948</h3><p>Primer descenso a segunda tras cuatro años en la máxima categoría</p></td></tr>
+          <tr><td><h3>1951</h3><p>Nuevo ascenso con Herrerita como estrella</p></td></tr>
+          <tr><td><h3>1957</h3><p>Campeón de segunda, vuelve a primera tras el descenso del 54 y se celebra con 2 años de retraso sus "bodas de oro"</p></td></tr>  
+          <tr><td><h3>1958</h3><p>El Molinón fue inexpugnable, el Sporting gano a todos los grandes incluido un 3-0 al Madrid de Di Stefano. Fue conocido como el Matagigantes</p>  
+          <p align="center"><img src="img/historia/1958.jpg"/></p></td></tr>
+          <tr><td><h3>1961</h3><p>Tras un nuevo descenso y una mala campaña agravada por la situación económica pierde su plaza en segunda. La renuncia del C.D. Condal evito el descenso tras un torneo en Mallorca.</p></td></tr>
+          </table>
+        
+		</div>
+	  </div><!--end of historia1-->
+      
+<!--========================================================================== HISTORIA 2 =====================================================================================-->  
+      
+      <div class="grids" id="api-historia2">	
+		<div class="grid-16 grid">
+             
+          <div align="center">
+          	<a href="#" class="button btn_historia1">1905<br>1969</a>&nbsp;&nbsp;
+            <a href="#" class="button btn_historia2">1970<br>1989</a>&nbsp;&nbsp;
+            <a href="#" class="button btn_historia3">1990<br>2014</a>&nbsp;&nbsp;
+          </div>
+          
+          <table id="historia2" class="varios">
+          <th><h4>1970-1989</h4></th>
+          <tr><td><h3>1970</h3><p>Campeón de segunda el club retorna a primera tras el debut 2 años antes de Quini. El equipo vuelve a denominarse "Real Sporting de Gijón"</p></td></tr>
+          <tr><td><h3>1973</h3><p>Se incorpora Víctor Hugo Doria, primer extranjero de la historia del Sporting y Antonio Landucci. El año siguiente Quini conseguiría su primer pichichi</p>
+          <p align="center"><img src="img/historia/1973a.jpg"/>&nbsp;&nbsp;&nbsp;&nbsp;<img src="img/historia/1973b.jpg"/></p></td></tr>
+          <tr><td><h3>1976</h3><p>Nuevo descenso a segunda, se vende a Churruca por 50 millones de las antiguas pesetas</p></td></tr>
+          <tr><td><h3>1977</h3><p>Campeón de segunda vuelve a primera con Vicente Miera en el banquillo</p></td></tr>
+          <tr><td><h3>1978</h3><p>Quinto en la liga el equipo accede por primera vez a la UEFA. En su debut elimina al Torino italiano pero pierde en la siguiente ronda contra el Estrella roja de Belgrado. Además este año se inaugura la escuela de futbol de mareo.</p></td></tr>
+          <tr><td><h3>1979</h3><p>El Sporting pelea por la liga donde termina subcampeón tras un polémico partido contra el Madrid. Se acuña la expresión "Así, así, así gana el Madrid"</p>
+          <p align="center"><img src="img/historia/1979.jpg"/></p></td></tr>
+          <tr><td><h3>1980</h3><p>Terceros en la liga, en copa vuelve a caer en semifinales. Quini es traspasado al Barcelona por 80 millones de pesetas. Se cumple el 75 aniversario del club</p>
+          <p align="center"><img src="img/historia/1980.jpg"/></p></td></tr>
+          <tr><td><h3>1981</h3><p>Séptimo en la liga, se llega por primera vez a una final de copa del rey. El rival fue el Barcelona de Quini. El partido se jugó en el Calderón</p></td></tr>
+          <tr><td><h3>1982</h3><p>14 en liga juega de nuevo una final de copa contra el Madrid. Se juega en el nuevo zorrilla</p></td></tr>
+          <tr><td><h3>1985</h3><p>Cuarto en liga el equipo se clasifica para una nueva edición de la UEFA, seria eliminado por el Colonia alemán. Ablanedo consigue su primer zamora, Quini había vuelto el año anterior y se consigue el prestigioso Trofeo Carranza</p></td></tr>
+          <tr><td><h3>1987</h3><p>Cuarto en la liga de los "play-off" juega la UEFA. El primer rival es el Milan y a pesar de una histórica victoria por 1-0 en el Molinón caen en el partido de vuelta por 3-0 con un, de nuevo, polémico arbitraje</p></td></tr>
+          </table>
+        
+		</div>
+	  </div><!--end of historia2-->
+      
+<!--========================================================================== HISTORIA 3 =====================================================================================-->  
+      
+      <div class="grids" id="api-historia3">	
+		<div class="grid-16 grid">
+             
+          <div align="center">
+          	<a href="#" class="button btn_historia1">1905<br>1969</a>&nbsp;&nbsp;
+            <a href="#" class="button btn_historia2">1970<br>1989</a>&nbsp;&nbsp;
+            <a href="#" class="button btn_historia3">1990<br>2014</a>&nbsp;&nbsp;
+          </div>
+          
+          <table id="historia3" class="varios">
+          <th><h4>1990-2013</h4></th>
+          <tr><td><h3>1991</h3><p>Tras un gran año, el equipo se clasifica para la UEFA con Ciriaco Cano como entrenador. Se cae en segunda ronda contra el Steaua de Bucarest. Al año siguiente el club pasaría a ser SAD</p>
+          <p align="center"><img src="img/historia/1991.jpg"/></p></td></tr>
+          <tr><td><h3>1995</h3><p>El Sporting termina el los últimos puestos de la clasificación por lo que debe jugar la promoción contra el Lleida de la que sale victorioso</p></td></tr>
+          <tr><td><h3>1997</h3><p>Tras un año desastroso el Sporting desciende a segunda siendo el peor equipo de la liga terminando ultimo con tan solo 2 victorias en toda la temporada</p></td></tr>
+          <tr><td><h3>2001</h3><p>Tras una crisis económica que pone en peligro la continuidad del club, el Ayuntamiento compra Mareo y permite la supervivencia del equipo. Dos años antes Ablanedo colgaba sus guantes</p></td></tr>
+          <tr><td><h3>2004</h3><p>Tras un año luchando directamente por los puestos de ascenso, esta posibilidad se escapa en las últimas jornadas, es el conocido como el año del casi</p></td></tr>
+          <tr><td><h3>2005</h3><p>Año del centenario, se realizan distintas conmemoraciones.</p>
+          <p align="center"><img src="img/historia/2005.jpg"/></p></td></tr>  
+          <tr><td><h3>2008</h3><p>Tras una década en el infierno el Sporting retorna a su categoría de la mano de Manolo Preciado.</p>
+          <p align="center"><img src="img/historia/2008.jpg"/></p></td></tr>
+          <tr><td><h3>2012</h3><p>Nuevo descenso tras cuatro años en primera y una histórica victoria en el Bernabeu, sin embargo la peor noticia para el sportinguismo sería el fallecimiento de Manolo Preciado ese mismo verano.</p>
+          <p align="center"><img src="img/historia/2012.jpg"/></p></td></tr>
+ 		  <tr><td><h3>2014</h3><p>Tras un año coqueteando con los puestos de ascenso llegando a estar lider, finalmente se pierde la opción de ascender en el playoff con Las Palmas.</p></td></tr>
+          </table>
+        
+		</div>
+	  </div><!--end of historia3-->
+      
+<!--========================================================================== LEYENDAS =====================================================================================-->  
+      
+      <div class="grids" id="api-leyendas">	
+		<div class="grid-16 grid">
+             
+          <table id="leyendas" class="varios">
+          <th colspan="2">Fernando Villaverde</th>
+          <tr>
+          	<td style="text-align:center; width:30%;"><img src="img/leyendas/villaverde.jpg"/></td>
+            <td>La primera estrella del Sporting, tenía una pierda izquierda magnifica y una gran potencia en sus disparos. Se retiró prematuramente por una lesión en un amistoso.</td>
+          </tr>
+          <th colspan="2">Ramon Herrera</th>
+          <tr>
+          	<td style="text-align:center; width:30%;"><img src="img/leyendas/herrera.jpg"/></td>
+            <td>Llego en 1925. Su jugada típica era un quiebro de cintura con el que se libraba de sus marcadores. Ficho por el Atco. de Madrid pero volvió en 1930. Se retiró en 1935.</td>
+          </tr>
+          <th colspan="2">Cholo Dindurra</th>
+          <tr>
+          	<td style="text-align:center; width:30%;"><img src="img/leyendas/dindurra.jpg"/></td>
+            <td>Sus grandes recursos eran habilidad, toque y elegancia. Le gustaba jugar de extremo derecho y en esa posición fue uno de los mejores en su época. Se retiró en 1953.</td>
+          </tr>
+          <th colspan="2">Manuel Meana</th>
+          <tr>
+          	<td style="text-align:center; width:30%;"><img src="img/leyendas/meana.jpg"/></td>
+            <td>Primer internacional con el Sporting. Fue uno de los mejores medio centros del futbol español. Tuvo una grave lesión y aunque volvió a jugar no volvió a ser el gran jugador de antes.</td>
+          </tr>
+          <th colspan="2">Jose Luis Ortiz</th>
+          <tr>
+          	<td style="text-align:center; width:30%;"><img src="img/leyendas/ortiz.jpg"/></td>
+            <td>Estuvo desde 1948 hasta 1963. Además de sus cualidades como jugador, fue él quien tiro la moneda que evito el descenso. Recibió el premio Mochin Triana por su dedicación al Sporting.</td>
+          </tr>
+          <th colspan="2">Enzo Ferrero</th>
+          <tr>
+          	<td style="text-align:center; width:30%;"><img src="img/leyendas/ferrero.jpg"/></td>
+            <td>Extremo de juego deslumbrante y buen disparo, su gran labor coincidió con la época dorada del club. Es el jugador extranjero que mas partidos ha disputado con el Sporting, 241 con 54 goles.</td>
+          </tr>
+          <th colspan="2">Jesús Castro</th>
+          <tr>
+          	<td style="text-align:center; width:30%;"><img src="img/leyendas/castro.jpg"/></td>
+            <td>El portero del Sporting en su apogeo. Hermano de Quini, mostro sus genialidades en grandes partidos en el Molinón. Falleció de forma trágica tratando de salvar a una niña de morir ahogada.</td>
+          </tr>
+          <th colspan="2">Cundi</th>
+          <tr>
+          	<td style="text-align:center; width:30%;"><img src="img/leyendas/cundi.jpg"/></td>
+            <td>Jugador de gran pundonor y honradez profesional. Jugo como defensa izquierdo, de gran potencia física, velocidad y anticipación. Su hijo Rubén también jugó en el Sporting.</td>
+          </tr>
+          <th colspan="2">Antonio Maceda</th>
+          <tr>
+          	<td style="text-align:center; width:30%;"><img src="img/leyendas/maceda.jpg"/></td>
+            <td>Libero de grandes cualidades físicas, y un gran rematador de cabeza. Ficho por el Madrid y fue internacional en 36 ocasiones. También ha sido entrenador del Sporting.</td>
+          </tr>
+          <th colspan="2">Joaquin Alonso</th>
+          <tr>
+          	<td style="text-align:center; width:30%;"><img src="img/leyendas/joaquin.jpg"/></td>
+            <td>Desarrollo toda su carrera en el Sporting y tuvo el record de mayor número de partidos en primera 479. Gran centrocampista que destacaba por sus pases. Internacional en 16 ocasiones.</td>
+          </tr>
+          <th colspan="2">Enrique Castro Quini</th>
+          <tr>
+          	<td style="text-align:center; width:30%;"><img src="img/leyendas/quini.jpg"/></td>
+            <td>El Brujo. Hablar de Quini es hablar de gol, 3 veces pichichi en primera con el Sporting, 2 con el Barça. Internacional y pieza clave de la selección. Además de sus goles destaca su calidad humana.</td>
+          </tr>
+          <th colspan="2">Juan Carlos Ablanedo</th>
+          <tr>
+          	<td style="text-align:center; width:30%;"><img src="img/leyendas/ablanedo.jpg"/></td>
+            <td>El mejor portero de la historia del Sporting y uno de los mejores de España. Zamora en 3 ocasiones 84-85, 85-86 y 89-90. Llego a ser internacional, uno de los jugadores más queridos por el sportinguismo.</td>
+          </tr>
+          <th colspan="2">David Villa</th>
+          <tr>
+          	<td style="text-align:center; width:30%;"><img src="img/leyendas/villa.jpg"/></td>
+            <td>Aunque su paso fue breve, ya mostraba el gran jugador que sería. Su traspaso ayudo a la maltrecha situación económica y se convirtió en el primer sportinguista en ser campeón de Europa y del mundo.</td>
+          </tr>
+          <th colspan="2">Manolo Preciado</th>
+          <tr>
+          	<td style="text-align:center; width:30%;"><img src="img/leyendas/preciado.jpg"/></td>
+            <td>Alma del equipo que consiguió el ascenso tras 10 años, su peculiar carácter caló hondo. Logró mantener al equipo 3 años sin casi presupuesto. Su fallecimiento fue un duro golpe para toda la afición.</td>
+          </tr>
+          </table>
+        
+		</div>
+	  </div><!--end of leyendas-->
+      
+      
+<!--========================================================================== ESTADISTICAS =====================================================================================-->  
+      
+      <div class="grids" id="api-estadisticas">	
+		<div class="grid-16 grid">
+             
+        <table id="estadisticas" class="datos">
+        
+        <th colspan="2">Primera Division</th>
+        <tr><td><span class="cabecera">Participaciones:</span> 40</td></tr>
+        <tr><td><span class="cabecera">Puesto histórico:</span> 15</td></tr>
+        <tr><td><span class="cabecera">Mejor Puesto:</span> 2</td></tr>
+        <tr><td><span class="cabecera">Peor Puesto:</span> 20</td></tr>
+        <tr><td><span class="cabecera">Mayor Goleada a favor:</span>
+        <br>Sporting 7 - Osasuna 1 (93/94)</td></tr>
+        <tr><td><span class="cabecera">Mayor Goleada en contra:</span>
+        <br>Barcelona 9 - Sporting 0 (51/52)</td></tr>
+        
+        <th colspan="2"><br>Segunda Division</th>
+        <tr><td><span class="cabecera">Participaciones:</span> 43</td></tr>
+        <tr><td><span class="cabecera">Puesto histórico:</span> 3</td></tr>
+        <tr><td><span class="cabecera">Mayor Goleada a favor:</span>
+        <br>Sporting 11 - Lleida 0 (56/57)</td></tr>
+        <tr><td><span class="cabecera">Mayor Goleada en contra:</span>
+        <br>Racing 6 - Sporting 0 (62/63)</td></tr>
+        
+        <th colspan="2"><br>Palmares</th>
+        <tr><td><span class="cabecera">Participaciones en Copa del Rey:</span> 86</td></tr>
+		<tr><td><span class="cabecera">Mejor clasificación:</span><br>Subcampeón (80/81 y 81/82)</td></tr>
+		<tr><td><span class="cabecera">Participaciones en UEFA:</span> 6 </td></tr>
+		<tr><td><span class="cabecera">Mejor clasificación:</span><br>16 de final (78/79 y 91/92)</td></tr>
+        
+        <th colspan="2"><br>Jugadores</th>
+        <tr><td><span class="cabecera">Máximo goleador:</span> Quini (272)</td></tr>
+		<tr><td><span class="cabecera">Jugadores internacionales:</span> 19</td></tr>
+		<tr><td><span class="cabecera">Primero:</span> Meana (España 2 - Bélgica 0, 1921)</td></tr>
+		<tr><td><span class="cabecera">Último:</span> Pier (Macedonia 0 - España 2, 1996)</td></tr>
+		<tr><td><span class="cabecera">Máximo goleador de 1ª: </span>
+		<br>Quini: 24 goles (1979/80)</td></tr>
+		<tr><td><span class="cabecera">Máximo goleador de 2ª: </span> 
+		<br>Ricardo: 46 goles (1956/57)</td></tr>
+		<tr><td><span class="cabecera">Portero menos goleado de 1ª:</span>
+		<br>Ablanedo II: 22 goles encajados (1984/85)</td></tr>
+		<tr><td><span class="cabecera">Portero menos goleado de 2ª:</span> 
+		<br>Roberto: 31 goles encajados (2005/06)</td></tr>
+        
+        <th colspan="2"><br>Records</th>
+		<tr><td><span class="cabecera">Más partidos: </span>
+		<br>Joaquín (479; 1977-1992)
+		<br>Jiménez (420; 1979-1991)
+		<br>Ablanedo II (399; 1982-1998)</td></tr>
+		<tr><td><span class="cabecera">Más goles: </span>
+		<br>Quini: 165
+		<br>Joaquín: 65
+		<br>Ferrero: 54</td></tr>
+		<tr><td><span class="cabecera">Más expulsiones: </span>
+		<br>Ablanedo, Luis Sierra y Manjarin: 4</td></tr>
+		<tr><td><span class="cabecera">Más joven: </span>
+		<br>En jugar: Orlando, 17 años y 16 días (1984)
+        <br>En marcar: Eloy, 18 años y 112 días (1983)</td></tr>
+		<tr><td><span class="cabecera">Más viejo: </span>
+		<br>En jugar: Molinucu, 38 años y 129 días (1954)
+        <br>En marcar gol: Quini, 37 años y 132 días (1987)</td></tr>
+        </table>
+            
+		</div>
+	  </div><!--end of estadisticas-->
+   
+   
+      <!--========================================================================== MATCHLIVE =====================================================================================-->  
+      
+      
+      
+      <div class="grids" id="api-matchlive">	
+		<div class="grid-16 grid">          
+        
+         <div class="cargando" style="display:none;"><img src="img/loading.gif"/></div>
+        
+         <div id="matchlive"></div>
+        
+		</div>
+	  </div><!--end of matchlive-->
+
+<!--========================================================================== FOOTER =====================================================================================--> 
+
+</div><!--end of wrapper--> 
+			        
+</body>
+</html>

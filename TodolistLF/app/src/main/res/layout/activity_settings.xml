@@ -1,0 +1,152 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="es.antoniolf.todolistlf.SettingsActivity"
+    android:background="@drawable/gradient">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentStart="false"
+        android:layout_margin="0dp"
+        android:background="@color/blue"
+        android:id="@+id/linearLayout">
+
+        <ImageButton
+            android:layout_width="52dp"
+            android:layout_height="match_parent"
+            android:id="@+id/ib_home"
+            android:src="@drawable/b_home"
+            android:background="@null"
+            android:onClick="goHome" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/settings"
+            android:id="@+id/txt_title"
+            android:gravity="center_vertical|center_horizontal"
+            android:textSize="35dp"
+            android:textColor="@color/clear"
+            android:elegantTextHeight="true" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/linearLayout"
+        android:layout_above="@+id/b_sendnp">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/orderproject"
+            android:id="@+id/textView4"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/et_projname"
+            android:layout_marginTop="20dp" />
+
+        <RadioGroup
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView5"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical"
+            android:id="@+id/radioGroup3"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_gravity="center">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/s_latest"
+                android:id="@+id/rb_pLatest"
+                android:layout_gravity="center|left"
+                android:layout_marginLeft="100dp" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/s_name"
+                android:id="@+id/rb_pName"
+                android:checked="true"
+                android:layout_gravity="left"
+                android:layout_marginLeft="100dp" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/s_priority"
+                android:id="@+id/rb_pPriority"
+                android:layout_gravity="left"
+                android:layout_marginLeft="100dp" />
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/ordertask"
+            android:id="@+id/textView8"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/et_projname"
+            android:layout_marginTop="20dp" />
+
+        <RadioGroup
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView5"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical"
+            android:id="@+id/radioGroup4"
+            android:gravity="center_vertical|center_horizontal" >
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/s_latest"
+                android:id="@+id/rb_tLatest"
+                android:layout_marginLeft="100dp"
+                android:layout_gravity="left" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/s_name"
+                android:id="@+id/rb_tName"
+                android:checked="true"
+                android:layout_gravity="left"
+                android:layout_marginLeft="100dp" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/s_percentage"
+                android:id="@+id/rb_tPercentage"
+                android:layout_gravity="left"
+                android:layout_marginLeft="100dp" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/b_save"
+        android:id="@+id/b_sendnp"
+        android:background="@drawable/gradient"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="sendSettings" />
+
+</RelativeLayout>

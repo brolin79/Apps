@@ -1,0 +1,211 @@
+@charset "utf-8";
+
+/*------------------------------------*\
+	MAIN
+\*------------------------------------*/
+
+body{margin:0; font-size:0.85em; font-family:Tahoma, Geneva, sans-serif; background:#FFF;}
+
+ul,ol,dd{margin:0;padding:0;}
+nav ul,nav ol{list-style:none;list-style-image:none;}
+img{border:none;}
+p{
+	margin:10px 0;	
+}
+
+
+
+/*--- HEADINGS ---*/
+h1, h2, h3 {
+	font-style: normal;
+	font-weight: bold;
+	color: #FF0000;
+	text-shadow: 1px 1px 0px #999999;
+}
+
+h1 {font-size: 1.8em; line-height: 1.2em; margin: 0 0 5px 0; color:#FFF; letter-spacing:1px;}
+h2 {font-size: 1.3em; line-height: 1.0em; margin: 0 0 5px 0;}
+h3 {font-size: 1.3em; line-height: 0.8em; margin: 10px 0 10px 5px; letter-spacing:1px;}
+h4 {font-size: 1.1em; letter-spacing:1px; color:#000; margin: 0; padding:0;}
+
+
+/*------------------------------------*\
+	CLASSES
+\*------------------------------------*/
+.left	{ float:left!important; }
+.right	{ float:right!important; }
+
+pre{
+margin: 0;	padding: 10px 0 0 0;
+}
+
+/*Colored boxes, green and grey*/
+.grey, .red {-webkit-border-radius: 10px; -moz-border-radius: 10px; -o-border-radius: 10px; border-radius: 10px; zoom: 1; border: 1px solid #CCC; padding:5px 2px;}
+.grey {background-color: #EFEFEF; color:#F80000;  font-size:1.1em;}
+.red{background-color: #F80000; color:#EFEFEF; font-size:1.1em; font-weight:bold;}
+
+/*Additional whitespace top,bottom or both for any element. You don´t have to use hr or lots of <br />*/
+.spacer {margin-top: 30px!important;}
+
+.fechanot{	font-size: 0.85em; font-weight:bold; font-style:italic; color:#F80000;}
+.fecha{	font-size: 0.85em; font-weight:bold; font-style:italic; color:#F80000;}
+.cabecera{font-weight:bold;color:#F80000;}
+.verde{	 font-weight:bold;  color:#00CC33; font-size:1.1em;}
+.verdon{	 font-weight:bold;  color:#006600; font-size:1.1em;}
+.amarillo{ font-weight:bold;  color:#FFCC33; font-size:1.1em;}
+.rojo{	font-weight:bold;  color:#CC0000; font-size:1.1em;}
+
+/*------------------------------------*\
+	CABECERA MENU
+\*------------------------------------*/
+
+.logo{margin:0.5em 0 0 0; text-align:center; text-shadow:0 -1px 1px #222; line-height:50px;}
+.menu-trigger{position:absolute; top:2px; left:0; padding:0 0.3em; line-height:60px;}
+.escudo{position:absolute; top:7px; right:3px; padding:0 0.3em; line-height:60px;}
+
+.main{
+	background:#F80000;
+	background:-o-linear-gradient(top, #FF5151, #F80000);
+	background:-ms-linear-gradient(top, #FF5151, #F80000);
+	background:-moz-linear-gradient(top, #FF5151, #F80000);
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0, #FF5151), color-stop(1, #F80000));
+	background:-webkit-linear-gradient(#FF5151, #F80000);background:linear-gradient(top, #FF5151, #F80000);
+	-moz-box-shadow:0 1px 5px rgba(34,34,34,0.5);
+	-webkit-box-shadow:0 1px 5px rgba(34,34,34,0.5);
+	box-shadow:0 1px 5px rgba(34,34,34,0.5);
+	position:fixed; top:0; 
+	width:85%;
+	max-width:none;
+	height:50px;
+	margin:0; padding:0 7.5%;
+	border-bottom:1px solid #1b5572;
+}
+
+/*------------------------------------*\
+	LINKS and BUTTON
+\*------------------------------------*/
+a{ color:#F80000; text-decoration:none; font-weight:bold;}
+a:hover{text-decoration:underline;
+}
+
+a.button{
+border:1px solid #ff6262; -webkit-border-radius: 3px; -moz-border-radius: 3px;border-radius: 3px;font-size:1.em;font-family:arial, helvetica, sans-serif; padding: 6px 14px; text-decoration:none; display:inline-block;text-shadow: -1px -1px 0 rgba(0,0,0,0.3);font-weight:bold; color: #FFFFFF;
+ background-color: #ff9a9a; background-image: -webkit-gradient(linear, left top, left bottom, from(#ff9a9a), to(#ff4040));
+ background-image: -webkit-linear-gradient(top, #ff9a9a, #ff4040);
+ background-image: -moz-linear-gradient(top, #ff9a9a, #ff4040);
+ background-image: -ms-linear-gradient(top, #ff9a9a, #ff4040);
+ background-image: -o-linear-gradient(top, #ff9a9a, #ff4040);
+ background-image: linear-gradient(to bottom, #ff9a9a, #ff4040);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#ff9a9a, endColorstr=#ff4040);
+}
+
+a.button:hover{
+border:1px solid #ff3434;
+ background-color: #ff6767; background-image: -webkit-gradient(linear, left top, left bottom, from(#ff6767), to(#ff0d0d));
+ background-image: -webkit-linear-gradient(top, #ff6767, #ff0d0d);
+ background-image: -moz-linear-gradient(top, #ff6767, #ff0d0d);
+ background-image: -ms-linear-gradient(top, #ff6767, #ff0d0d);
+ background-image: -o-linear-gradient(top, #ff6767, #ff0d0d);
+ background-image: linear-gradient(to bottom, #ff6767, #ff0d0d);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#ff6767, endColorstr=#ff0d0d);
+}
+
+
+/*------------------------------------*\
+	IMAGES
+\*------------------------------------*/
+img.left	{ margin:0 20px 10px 0; }
+img.right	{ margin:0 0 10px 20px; }
+/* due to article of Chris Coyier 
+http://css-tricks.com/441-resizeable-images-at-full-resolution/ */
+img.expand { width: 24em; margin: 0; }
+
+
+/*------------------------------------*\
+	MENU
+\*------------------------------------*/
+
+#menu li img{
+	margin-bottom: -2px; padding-right:3px;
+}
+
+#menu li a{
+	background:#F80000;
+	background:-o-linear-gradient(top, #FF5151, #F80000);
+	background:-ms-linear-gradient(top, #FF5151, #F80000);
+	background:-moz-linear-gradient(top, #FF5151, #F80000);
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0, #FF5151), color-stop(1, #F80000));
+	background:-webkit-linear-gradient(#FF5151, #F80000);
+	background:linear-gradient(top, #FF5151, #F80000);
+	display:block;
+	padding:0.8em 5%;
+	border-bottom:1px solid #FFFFFF;
+	font-size: 1.0em; font-weight:bold; letter-spacing:2px;
+	text-decoration:none;
+	text-shadow:0 -1px 2px #222;
+	color:#f7f7f7;
+}
+
+#menu li a:hover{
+	background:#FEFFFF;
+	background:-o-linear-gradient(top, #FF5151, #FEFFFF);
+	background:-ms-linear-gradient(top, #FF5151, #FEFFFF);
+	background:-moz-linear-gradient(top, #FF5151, #FEFFFF);
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0, #FF5151), color-stop(1, #FEFFFF));
+	background:-webkit-linear-gradient(#FF5151, #FEFFFF);
+	background:linear-gradient(top, #FF5151, #FEFFFF);
+	color:#F80000;
+}
+
+
+/*------------------------------------*\
+	TABLE
+\*------------------------------------*/
+table {
+	border-collapse : collapse;
+	padding:0; margin:5px 0; width: 100%;
+	}
+	th {
+		background : #FFF;
+		border-bottom : 2px solid #F80000;
+	}
+	td {	
+		text-align:left;
+		vertical-align:middle;
+	}
+	td,th {
+		padding: 2px 2px; 
+		vertical-align:middle;	
+	}
+	
+	.datos td, th {
+		padding : 2px 2px;
+		vertical-align:top;
+		text-align:left;
+	}		
+	.datos tr:nth-child(odd) { 
+		background : #F9F9F9;
+	}
+	.datos tr:nth-child(even) {
+		background : #FFF;
+	}
+	.datos td {
+		border-bottom : 1px solid #FF5151;
+		vertical-align:middle;
+	}
+	
+	.varios td, th {
+		padding : 2px 2px;
+		vertical-align:top;
+		text-align:left;
+	}		
+	.varios tr:nth-child(odd) { 
+		background : #FFF;
+	}
+	.varios tr:nth-child(even) {
+		background : #FFF;
+	}
+	.varios td {
+		border-bottom : 1px solid #FF5151;
+		vertical-align:middle;
+	}
+	
+table p{margin:0; padding: 1px 0;}
