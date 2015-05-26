@@ -1,0 +1,34 @@
+/***** MOVER ENTRE ACTIVITIES *****/
+    public void startSinglePlayer(View v){
+        Intent myIntent = new Intent(this,GameActivity.class);
+        startActivity(myIntent);
+    }
+
+	Intent startActivity = new Intent(ActivityOne.this, ActivityTwo.class);
+        startActivity(startActivity);
+
+/***** DELAYER *****/
+    new Handler().postDelayed(new Runnable() {
+    	@Override
+        public void run() {
+        nextActivity();
+        finish();
+        }
+    },2000);
+
+
+/***** LOG TIPO ECHO *****/
+Log.d("MyLog","The Letter is: "+letter);
+
+Log.v(); // Verbose
+Log.d(); // Debug
+Log.i(); // Info
+Log.w(); // Warning
+Log.e(); // Error
+
+/***** TOAST (MENSAJE TIPO TOOLTIP) *****/
+Toast.makeText(MainActivity.this,var,Toast.LENGTH_SHORT).show();
+
+/***** PASAR ENTRE INTENTS *****/
+myIntent.putExtra("var",var);
+String var = getIntent().getStringExtra("var");
